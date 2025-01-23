@@ -1,0 +1,56 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "mera" ]
+  pull_request:
+    branches: [ "mera" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy to Cloudflare Pages
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+          toolchain: stable
+
+      - name: Enviroment Deps
+        run: apt-get update && apt-get install -y \
+             libssl3 \
+             libssl-dev \
+             libgcc-s1 \
+             libstdc++6 \
+             curl \
+             && rm -rf /var/lib/apt/lists/* 
+        
+      - name: Cargo Binstall Installation
+        run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+
+      - name: Trunk Installation
+        run: cargo binstall trunk
+        
+      - name: Generate Tailwind CSS
+        uses: ZoeyVid/tailwindcss-update@v1.4.0
+        with:
+          input: styles/input.css
+          output: styles/output.css 
+
+      - name: Build static assets
+        run: trunk build --release
+        
+      - name: Publish
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: nostrdevs-ci-test # e.g. 'my-project'
+          directory: dist # e.g. 'dist'
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
