@@ -43,6 +43,6 @@ pub const MEETUP_HISTORY: [MeetupDetails; 2] = [
 ];
 
 pub const LATEST_MEETUP_URL: &str = env!("LATEST_MEETUP_URL");
-pub const GITHUB_URL: &str = env!("GITHUB_URL");
+pub const GITHUB_URL: &str = env!("GH_URL");
 pub const X_URL: &str = env!("X_URL");
 pub const PRIMAL_URL: &str = env!("PRIMAL_URL");

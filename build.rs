@@ -11,7 +11,7 @@ impl TryFrom<&str> for Env {
     fn try_from(value: &str) -> Result<Self, Self::Error> {
         let (key, value) = value.split_once("=").ok_or("Invalid line in .env file")?;
         match key {
-            "GITHUB_URL" => Ok(Self::GithubUrl(value.to_string())),
+            "GH_URL" => Ok(Self::GithubUrl(value.to_string())),
             "X_URL" => Ok(Self::XUrl(value.to_string())),
             "PRIMAL_URL" => Ok(Self::PrimalUrl(value.to_string())),
             "LATEST_MEETUP_URL" => Ok(Self::LatestMeetupUrl(value.to_string())),
@@ -38,7 +38,7 @@ fn main() {
             vars.push(env);
         }
     }
-    println!("cargo:rustc-env=GITHUB_URL={}", vars[0]);
+    println!("cargo:rustc-env=GH_URL={}", vars[0]);
     println!("cargo:rustc-env=X_URL={}", vars[1]);
     println!("cargo:rustc-env=PRIMAL_URL={}", vars[2]);
     println!("cargo:rustc-env=LATEST_MEETUP_URL={}", vars[3]);
