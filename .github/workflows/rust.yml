@@ -36,8 +36,15 @@ jobs:
         with:
           input: styles/input.css
           output: styles/output.css 
+          config: tailwind.config.cjs
 
       - name: Build static assets
+        env:
+          GH_URL: ${{ vars.GH_URL }}
+          X_URL: ${{ vars.X_URL }}
+          PRIMAL_URL: ${{ vars.PRIMAL_URL }}
+          LATEST_MEETUP_URL: ${{ vars.LATEST_MEETUP_URL }}
+
         run: trunk build --release
         
       - name: Publish
