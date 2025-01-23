@@ -1,4 +1,4 @@
-name: Rust
+name: Deploy to CF
 
 on:
   push:
@@ -31,12 +31,14 @@ jobs:
       - name: Trunk Installation
         run: cargo binstall trunk --no-confirm
         
-      - name: Generate Tailwind CSS
-        uses: ZoeyVid/tailwindcss-update@v1.4.0
-        with:
-          input: styles/input.css
-          output: styles/output.css 
-          params: "-c tailwind.config.cjs"
+      - name: Dowload TailwindCSS
+        run: curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/download/v3.4.17/tailwindcss-linux-x64
+
+      - name: Install TailwindCSS
+        run: chmod +x tailwindcss-linux-x64 && sudo mv tailwindcss-linux-x64 /usr/local/bin/tailwindcss
+
+      - name: Generate TailwindCSS
+        run: tailwindcss -i styles/input.css -o styles/output.css -c tailwind.config.cjs
 
       - name: Build static assets
         env:
