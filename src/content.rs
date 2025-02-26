@@ -5,7 +5,21 @@ pub struct MeetupDetails {
     pub title: &'static str,
     pub topics: &'static [(&'static str, &'static str)],
 }
-pub const MEETUP_HISTORY: [MeetupDetails; 2] = [
+pub const MEETUP_HISTORY: [MeetupDetails; 3] = [
+    MeetupDetails {
+        id: "2",
+        date: "2025-02-26",
+        title: "Meetup Febrero 2025",
+        topics: &[
+            ("Weekly Nostr Recap", "https://njump.me/nevent1qvzqqqqqqypzqt0ql7s2cg6l7306fn9egnxn7vlhnl6ay870jhcplx23dwmtkukvqqswkytvpy8lpnhzeqtcfm4wl7ta3wrlweavs8avtn0u4hz5qs5j9us3d5eh5"),
+            ("Jack Dorsey Funding More Nostr Stuff", "https://njump.me/nevent1qvzqqqqqqypzpq35r7yzkm4te5460u00jz4djcw0qa90zku7739qn7wj4ralhe4zqqstxwl0y86ylj4yh39hmtjjfssn8lcamtk4d6nn6lcqzk3pkexne9ge6p3rg"),
+            ("AirBnB on Nostr", "https://github.com/sudonym-btc/hostr?tab=readme-ov-file"),
+            ("Triangles", "https://primal.net/p/npub1zh8hvd4p5egfq56fujv0nxnnl05lk8mewrjhrqq6f3u3h8cme4aqm25aww"),
+            ("Pokey - Pull Notifications", "https://github.com/KoalaSat/pokey"),
+            ("Notes as JWT", "https://github.com/dezh-tech/panda/blob/main/deliveries/http/middlewares/auth.go"),
+            ("MPC on Bitcoin + Nostr", "https://x.com/ArkLabsHQ/status/1892940274072223995"),
+        ],
+    },
     MeetupDetails {
         id: "1",
         date: "2025-01-30",

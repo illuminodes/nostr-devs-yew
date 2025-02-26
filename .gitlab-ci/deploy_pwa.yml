@@ -1,0 +1,9 @@
+deploy_pwa:
+  stage: deploy
+  image: oven/bun:1.2.2-alpine
+  before_script:
+    - bun install wrangler --save-dev
+  script:
+    - bunx wrangler pages deploy dist --project-name=nostrdevs
+  when: manual
+

@@ -1,0 +1,11 @@
+build_pwa:
+  stage: build
+  image: fuente-pwa:0.1
+  script:
+    - tailwindcss -i styles/input.css -o styles/output.css
+    - trunk build --release
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+
