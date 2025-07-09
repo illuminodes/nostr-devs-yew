@@ -1,7 +1,30 @@
-use tailwind_fuse::IntoTailwindClass;
 use yew::prelude::*;
 
 use crate::{AppLink, AppRoute, Card, Heading, Text, TranslationStore, MEETUP_HISTORY};
+
+impl Default for Heading {
+    fn default() -> Self {
+        Self {
+            size: crate::HeadingSize::H1,
+        }
+    }
+}
+
+impl Default for Card {
+    fn default() -> Self {
+        Self {
+            hover: crate::CardHover::Default,
+        }
+    }
+}
+
+impl Default for Text {
+    fn default() -> Self {
+        Self {
+            variant: crate::TextVariant::Default,
+        }
+    }
+}
 
 #[derive(PartialEq, Properties)]
 pub struct HomeProps {
