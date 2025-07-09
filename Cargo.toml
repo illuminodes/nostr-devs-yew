@@ -7,6 +7,5 @@ edition = "2021"
 lucide-yew = "1.1.0"
 serde = "1.0.217"
 serde_json = "1.0.137"
-tailwind_fuse = { version = "0.3.2", features = ["variant"] }
 yew = { version = "0.21.0", features = ["csr"] }
 yew-router = "0.18.0"

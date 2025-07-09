@@ -1,5 +1,4 @@
 use lucide_yew::{Github, Twitter};
-use tailwind_fuse::IntoTailwindClass;
 use yew::prelude::*;
 
 use crate::{AppLink, AppRoute, Heading, HeadingSize, Text, TextVariant, GITHUB_URL, LATEST_MEETUP_URL, PRIMAL_URL, X_URL};

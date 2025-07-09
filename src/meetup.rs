@@ -1,8 +1,15 @@
 use lucide_yew::Earth;
-use tailwind_fuse::IntoTailwindClass;
 use yew::prelude::*;
 
 use crate::{Heading, HeadingSize, List, Text, TranslationStore, MEETUP_HISTORY};
+
+impl Default for List {
+    fn default() -> Self {
+        Self {
+            variant: crate::ListVariant::Items,
+        }
+    }
+}
 #[derive(PartialEq, Properties)]
 pub struct MeetupPageProps {
     pub id: String,
