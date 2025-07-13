@@ -5,7 +5,32 @@ pub struct MeetupDetails {
     pub title: &'static str,
     pub topics: &'static [(&'static str, &'static str)],
 }
-pub const MEETUP_HISTORY: [MeetupDetails; 3] = [
+pub const MEETUP_HISTORY: [MeetupDetails; 5] = [
+    MeetupDetails {
+        id: "3",
+        date: "2025-07-30",
+        title: "Meetup Julio 2025",
+        topics: &[
+            // To add to the list, just add a new entry to the array
+            // Always in the format: (title, url)
+            ("Shakespeare - AI Website Builder", "https://www.youtube.com/watch?v=pK9gHjQr7nc"),
+        ],
+    },
+    MeetupDetails {
+        id: "3",
+        date: "2025-03-26",
+        title: "Resumen Marzo - Junio 2025",
+        topics: &[
+            ("Nostr Double Ratchet", "https://github.com/nostr-protocol/nips/pull/1813/files"),
+            ("Nostringer - Unlinkable Ring Sigs", "https://primal.net/e/nevent1qqsxssyqgz0znnlkqyh72948e5x4m6xtktsng3x6pg0z85uqrwmzakq3nuh2v"),
+            ("Sheetstr - Collaborative Docs", "https://sheetstr.amethyst.social/?id=99977dc6-7b37-4f37-b45a-43db702f2850&relay=wss://nostr.mom&author=d83065eae138206ffee7babc320ad32133032a6865952541ccfbe53eb428e054"),
+            ("Jellyfish - B2B Relays", "https://primal.net/e/nevent1qqs27gnyv5s8saq2n2lg4hct0l53dfxqlwpewxqydls5e0640vdmkds649vq4"),
+            ("NoteDeck - eGUI Client", "https://github.com/damus-io/notedeck/tree/master"),
+            ("AndOtherStuff - Hosted Auth Server", "https://github.com/andotherstuff/chorus"),
+            ("Chorus - Community Building", "https://github.com/andotherstuff/chorus"),
+            ("Nostr Remote Signer", "https://www.youtube.com/watch?v=16T_Psc8Qn4"),
+        ],
+    },
     MeetupDetails {
         id: "2",
         date: "2025-02-26",

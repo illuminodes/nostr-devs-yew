@@ -1,11 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "./src/**/*";
 
+@theme {
+  --color-nostr-dark: hsl(281, 61%, 24%);
+  --color-nostr-light: hsl(281, 66%, 52%);
+  --font-sourcecodepro: 'SourceCodePro', sans-serif;
+}
 
 @font-face {
   font-family: 'SourceCodePro';
-  src: url('/public/assets/SourceCodePro.ttf');
+  src: url('/public/assets/SourceCodePro.ttf') format("truetype");
 }
 
 @media (min-width: 768px) {
