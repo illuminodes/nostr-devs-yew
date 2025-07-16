@@ -5,18 +5,34 @@ services:
 
 stages:
   - build-image
-  - build
-  - deploy
+  - check
+  - test
+
+check_workspace:
+  stage: check
+  tags:
+    - ansible
+  script:
+    - cargo check --release
+
+lint_workspace:
+  stage: check
+  tags:
+    - ansible
+  script:
+    - cargo clippy --release -- -D warnings
+
+format_workspace:
+  stage: check
+  tags:
+    - ansible
+  script:
+    - cargo fmt --all --check
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
     - target/
     - public/
-
-include:
-  - local: '/.gitlab-ci/build-image.yml'
-  - local: '/.gitlab-ci/build.yml'
-  - local: '/.gitlab-ci/deploy_pwa.yml'
 
 

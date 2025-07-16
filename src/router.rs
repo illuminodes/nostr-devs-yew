@@ -19,7 +19,11 @@ pub struct AppLinkProps {
 
 #[function_component(AppLink)]
 pub fn app_link(props: &AppLinkProps) -> Html {
-    let AppLinkProps { route, children, classes } = props;
+    let AppLinkProps {
+        route,
+        children,
+        classes,
+    } = props;
     let navigator = use_navigator().expect("Navigator not found");
     html! {
         <button
