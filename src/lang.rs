@@ -20,7 +20,11 @@ impl Translations {
         self.locale
     }
     pub fn find_translation(&self, key: &str) -> String {
-        self.translations.translations.get(key).cloned().unwrap_or(format!("NOT FOUND {}", key))
+        self.translations
+            .translations
+            .get(key)
+            .cloned()
+            .unwrap_or(format!("NOT FOUND {}", key))
     }
 }
 

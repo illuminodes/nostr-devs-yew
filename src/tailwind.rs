@@ -1,7 +1,12 @@
 #[derive(PartialEq)]
-pub struct List { pub variant: ListVariant }
+pub struct List {
+    pub variant: ListVariant,
+}
 #[derive(PartialEq)]
-pub enum ListVariant { Items, Normal }
+pub enum ListVariant {
+    Items,
+    Normal,
+}
 
 impl List {
     pub fn to_class(&self) -> String {
@@ -15,9 +20,14 @@ impl List {
 }
 
 #[derive(PartialEq)]
-pub struct Card { pub hover: CardHover }
+pub struct Card {
+    pub hover: CardHover,
+}
 #[derive(PartialEq)]
-pub enum CardHover { Default, Light }
+pub enum CardHover {
+    Default,
+    Light,
+}
 
 impl Card {
     pub fn to_class(&self) -> String {

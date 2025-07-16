@@ -1,7 +1,10 @@
 use lucide_yew::{Github, Twitter};
 use yew::prelude::*;
 
-use crate::{AppLink, AppRoute, Heading, HeadingSize, Text, TextVariant, GITHUB_URL, LATEST_MEETUP_URL, PRIMAL_URL, X_URL};
+use crate::{
+    AppLink, AppRoute, Heading, HeadingSize, Text, TextVariant, GITHUB_URL, LATEST_MEETUP_URL,
+    PRIMAL_URL, X_URL,
+};
 #[function_component(AppLayout)]
 pub fn app_layout(props: &html::ChildrenProps) -> Html {
     html! {
