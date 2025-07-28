@@ -29,7 +29,7 @@ pub fn meetup_page(props: &MeetupPageProps) -> Html {
         list,
     } = props;
     let subheading = Heading {
-        size: HeadingSize::H2,
+        size: HeadingSize::H3,
     };
     let translator = use_context::<TranslationStore>().expect("Translation Context not found");
     let Some(meetup) = MEETUP_HISTORY.iter().find(|meetup| meetup.id == meet_id) else {
@@ -62,11 +62,11 @@ pub fn meetup_page(props: &MeetupPageProps) -> Html {
 
             <h2 class={subheading.to_class()}>{translator.find_translation("housekeeping_title")}</h2>
             <ul class={list.to_class()}>
-                <li class={text.to_class()} >{translator.find_translation("housekeeping_list_item_1")}</li>
-                <li class={text.to_class()} >{translator.find_translation("housekeeping_list_item_2")}</li>
-                <li class={text.to_class()} >{translator.find_translation("housekeeping_list_item_3")}</li>
-                <li class={text.to_class()} >{translator.find_translation("housekeeping_list_item_4")}</li>
-                <li class={text.to_class()} >{translator.find_translation("housekeeping_list_item_5")}</li>
+                <li class={Text { variant: crate::TextVariant::Small }.to_class()} >{translator.find_translation("housekeeping_list_item_1")}</li>
+                <li class={Text { variant: crate::TextVariant::Small }.to_class()} >{translator.find_translation("housekeeping_list_item_2")}</li>
+                <li class={Text { variant: crate::TextVariant::Small }.to_class()} >{translator.find_translation("housekeeping_list_item_3")}</li>
+                <li class={Text { variant: crate::TextVariant::Small }.to_class()} >{translator.find_translation("housekeeping_list_item_4")}</li>
+                <li class={Text { variant: crate::TextVariant::Small }.to_class()} >{translator.find_translation("housekeeping_list_item_5")}</li>
             </ul>
 
         </div>

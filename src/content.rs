@@ -7,13 +7,18 @@ pub struct MeetupDetails {
 }
 pub const MEETUP_HISTORY: [MeetupDetails; 5] = [
     MeetupDetails {
-        id: "3",
+        id: "4",
         date: "2025-07-30",
         title: "Meetup Julio 2025",
         topics: &[
             // To add to the list, just add a new entry to the array
             // Always in the format: (title, url)
-            ("Shakespeare - AI Website Builder", "https://www.youtube.com/watch?v=pK9gHjQr7nc"),
+            ("Alby Rugs Users??", "https://www.ainvest.com/news/alby-faces-backlash-unexpected-bitcoin-withdrawals-2506/"),
+            // ("Shakespeare - AI Website Builder", "https://www.youtube.com/watch?v=pK9gHjQr7nc"),
+            ("BCH + Nostr", "https://github.com/christroutner/nostr-sandbox/blob/master/16-npub-to-BCH-addr/npub-to-bch.js"),
+            ("Mostro - LN P2P trades", "https://github.com/MostroP2P/mostro"),
+            ("P2P Band", "https://p2p.band/"),
+            ("Markstr", "https://github.com/AbdelStark/markstr/tree/main"),
         ],
     },
     MeetupDetails {
