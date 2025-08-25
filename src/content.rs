@@ -5,16 +5,26 @@ pub struct MeetupDetails {
     pub title: &'static str,
     pub topics: &'static [(&'static str, &'static str)],
 }
-pub const MEETUP_HISTORY: [MeetupDetails; 5] = [
+pub const MEETUP_HISTORY: [MeetupDetails; 6] = [
+    MeetupDetails {
+        id: "5",
+        date: "2025-08-27",
+        title: "Meetup Agosto 2025",
+        topics: &[
+            // To add to the list, just add a new entry to the array
+            // Always in the format: (title, url)
+            ("n34 - Git + Nostr", "https://git.4rs.nl/awiteb/n34.git/about/"),
+            ("Bitchat goes Nostr", "https://primal.net/e/nevent1qqs9gt64cv5y30gsk9wtpdyth36vdxp5ea2fqz8zxl8z2mu467wkmfgz34g6p"),
+            ("NYM - Ephemeral Chats", "https://nym.bar/"),
+            ("Android Verified Developers", "https://developer.android.com/developer-verification"),
+        ],
+    },
     MeetupDetails {
         id: "4",
         date: "2025-07-30",
         title: "Meetup Julio 2025",
         topics: &[
-            // To add to the list, just add a new entry to the array
-            // Always in the format: (title, url)
             ("Alby Rugs Users??", "https://www.ainvest.com/news/alby-faces-backlash-unexpected-bitcoin-withdrawals-2506/"),
-            // ("Shakespeare - AI Website Builder", "https://www.youtube.com/watch?v=pK9gHjQr7nc"),
             ("BCH + Nostr", "https://github.com/christroutner/nostr-sandbox/blob/master/16-npub-to-BCH-addr/npub-to-bch.js"),
             ("Mostro - LN P2P trades", "https://github.com/MostroP2P/mostro"),
             ("P2P Band", "https://p2p.band/"),
